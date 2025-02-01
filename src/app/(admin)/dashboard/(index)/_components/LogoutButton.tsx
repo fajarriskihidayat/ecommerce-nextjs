@@ -7,14 +7,21 @@ import {
 } from "@/components/ui/tooltip";
 import { ActionResult } from "@/types";
 import { LogOut } from "lucide-react";
+import { Logout } from "../lib/actions";
+import { useFormState } from "react-dom";
 
 const initialState: ActionResult = {
   error: "",
 };
 
 const LogoutButton = () => {
+  const [_, formAction] = useFormState(Logout, initialState);
+
   return (
-    <form className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
+    <form
+      action={formAction}
+      className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5"
+    >
       <Tooltip>
         <TooltipTrigger asChild>
           <button
