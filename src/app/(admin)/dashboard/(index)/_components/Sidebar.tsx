@@ -55,7 +55,7 @@ const Sidebar = () => {
               <Link
                 href="/dashboard/categories"
                 className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-foreground md:h-8 md:w-8 ${
-                  pathname === "/dashboard/categories"
+                  pathname.includes("/dashboard/categories")
                     ? "text-accent-foreground"
                     : "text-muted-foreground"
                 }`}
@@ -71,7 +71,7 @@ const Sidebar = () => {
               <Link
                 href="/dashboard/locations"
                 className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-foreground md:h-8 md:w-8 ${
-                  pathname === "/dashboard/locations"
+                  pathname.includes("/dashboard/locations")
                     ? "text-accent-foreground"
                     : "text-muted-foreground"
                 }`}
@@ -87,7 +87,7 @@ const Sidebar = () => {
               <Link
                 href="/dashboard/brands"
                 className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-foreground md:h-8 md:w-8 ${
-                  pathname === "/dashboard/brands"
+                  pathname.includes("/dashboard/brands")
                     ? "text-accent-foreground"
                     : "text-muted-foreground"
                 }`}
@@ -103,7 +103,7 @@ const Sidebar = () => {
               <Link
                 href="/dashboard/products"
                 className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-foreground md:h-8 md:w-8 ${
-                  pathname === "/dashboard/products"
+                  pathname.includes("/dashboard/products")
                     ? "text-accent-foreground"
                     : "text-muted-foreground"
                 }`}
@@ -119,7 +119,7 @@ const Sidebar = () => {
               <Link
                 href="/dashboard/orders"
                 className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-foreground md:h-8 md:w-8 ${
-                  pathname === "/dashboard/orders"
+                  pathname.includes("/dashboard/orders")
                     ? "text-accent-foreground"
                     : "text-muted-foreground"
                 }`}
@@ -135,7 +135,7 @@ const Sidebar = () => {
               <Link
                 href="/dashboard/customers"
                 className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-foreground md:h-8 md:w-8 ${
-                  pathname === "/dashboard/customers"
+                  pathname.includes("/dashboard/customers")
                     ? "text-accent-foreground"
                     : "text-muted-foreground"
                 }`}
