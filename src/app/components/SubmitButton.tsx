@@ -1,15 +1,24 @@
 import { Button } from "@/components/ui/button";
+import { ReactNode } from "react";
 import { useFormStatus } from "react-dom";
 
 interface SubmitButtonProps {
-  title: string;
+  children: ReactNode;
+  size?: "default" | "sm" | "lg" | "icon" | null | undefined;
+  variant?:
+    | "link"
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost";
 }
 
-const SubmitButton = ({ title }: SubmitButtonProps) => {
+const SubmitButton = ({ children, size, variant }: SubmitButtonProps) => {
   const { pending } = useFormStatus();
 
   return (
-    <Button type="submit" className="w-full" disabled={pending}>
+    <Button type="submit" size={size} variant={variant} disabled={pending}>
       {pending && (
         <div role="status">
           <svg
@@ -31,7 +40,7 @@ const SubmitButton = ({ title }: SubmitButtonProps) => {
           <span className="sr-only">Loading...</span>
         </div>
       )}
-      {title}
+      {children}
     </Button>
   );
 };

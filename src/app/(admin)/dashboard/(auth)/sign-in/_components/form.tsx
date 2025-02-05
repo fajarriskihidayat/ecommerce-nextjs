@@ -56,7 +56,7 @@ const SignInForm = () => {
               </div>
               <Input id="password" name="password" type="password" />
             </div>
-            <SubmitButton title="Login" />
+            <SubmitButton>Login</SubmitButton>
           </div>
         </form>
       </CardContent>
