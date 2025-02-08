@@ -1,6 +1,6 @@
 "use client";
 
-import DeleteButton from "@/app/components/DeleteButton";
+import DeleteButton from "@/app/(admin)/dashboard/(index)/_components/DeleteButton";
 import { Button } from "@/components/ui/button";
 import { getImageUrl } from "@/lib/supabase";
 import { Brand } from "@prisma/client";

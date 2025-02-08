@@ -1,6 +1,5 @@
 "use client";
 
-import SubmitButton from "@/app/components/SubmitButton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   Card,
@@ -15,6 +14,7 @@ import { ActionResult } from "@/types";
 import { AlertCircle } from "lucide-react";
 import { useFormState } from "react-dom";
 import { SignIn } from "../lib/actions";
+import SubmitButton from "./SubmitButton";
 
 const initialState: ActionResult = {
   error: "",

@@ -1,6 +1,6 @@
 "use client";
 
-import SubmitButton from "@/app/components/SubmitButton";
+import SubmitButton from "@/app/(admin)/dashboard/(index)/_components/SubmitButton";
 import { ActionResult } from "@/types";
 import { Trash } from "lucide-react";
 import { useFormState } from "react-dom";

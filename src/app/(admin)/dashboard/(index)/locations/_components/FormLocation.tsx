@@ -2,7 +2,7 @@
 
 import { AlertCircle, ChevronLeft } from "lucide-react";
 
-import SubmitButton from "@/app/components/SubmitButton";
+import SubmitButton from "@/app/(admin)/dashboard/(index)/_components/SubmitButton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

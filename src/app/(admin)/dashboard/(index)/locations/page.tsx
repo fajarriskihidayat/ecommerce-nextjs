@@ -1,4 +1,4 @@
-import { DataTable } from "@/app/components/DataTable";
+import { DataTable } from "@/app/(admin)/dashboard/(index)/_components/DataTable";
 import { Button } from "@/components/ui/button";
 import {
   Card,

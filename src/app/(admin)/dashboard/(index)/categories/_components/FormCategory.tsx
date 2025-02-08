@@ -11,7 +11,7 @@ import { ActionResult } from "@/types";
 import { useFormState } from "react-dom";
 import { postCategory, updateCategory } from "../lib/actions";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import SubmitButton from "@/app/components/SubmitButton";
+import SubmitButton from "@/app/(admin)/dashboard/(index)/_components/SubmitButton";
 import { Category } from "@prisma/client";
 
 interface FormCategoryProps {

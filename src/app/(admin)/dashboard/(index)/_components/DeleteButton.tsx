@@ -5,7 +5,7 @@ import { ActionResult } from "@/types";
 import { Trash } from "lucide-react";
 import React from "react";
 import { useFormState } from "react-dom";
-import SubmitButton from "@/app/components/SubmitButton";
+import SubmitButton from "@/app/(admin)/dashboard/(index)/_components/SubmitButton";
 
 const initialState: ActionResult = {
   error: "",
