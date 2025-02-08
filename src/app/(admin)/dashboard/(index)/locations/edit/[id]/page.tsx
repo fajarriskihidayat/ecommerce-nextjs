@@ -1,16 +1,9 @@
+import { TEdit } from "@/types";
 import { redirect } from "next/navigation";
-import { getLocationById } from "../../lib/data";
 import FormLocation from "../../_components/FormLocation";
+import { getLocationById } from "../../lib/data";
 
-type TParams = {
-  id: string;
-};
-
-interface EditPageProps {
-  params: TParams;
-}
-
-const EditPage = async ({ params }: EditPageProps) => {
+const EditPage = async ({ params }: TEdit) => {
   const data = await getLocationById(params.id);
 
   if (!data) {
