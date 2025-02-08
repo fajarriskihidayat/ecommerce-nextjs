@@ -1,11 +1,12 @@
 "use client";
 
+import DeleteButton from "@/app/components/DeleteButton";
 import { Button } from "@/components/ui/button";
 import { Category } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 import { Edit, Trash } from "lucide-react";
 import Link from "next/link";
-import DeleteButton from "./_components/DeleteButton";
+import { deleteCategory } from "./lib/actions";
 
 export const columns: ColumnDef<Category>[] = [
   {
@@ -25,7 +26,7 @@ export const columns: ColumnDef<Category>[] = [
               <Edit className="w-4 h-4" /> Edit
             </Link>
           </Button>
-          <DeleteButton id={category.id} />
+          <DeleteButton id={category.id} action={deleteCategory} />
         </div>
       );
     },
