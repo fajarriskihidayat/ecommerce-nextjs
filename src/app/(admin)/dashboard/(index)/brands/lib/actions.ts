@@ -73,9 +73,16 @@ export async function updateBrand(
     },
   });
 
+  if (!brand) {
+    return {
+      error: "Brand not found",
+    };
+  }
+
   let filename = brand?.logo;
 
   if (fileUpload.size > 0) {
+    deleteFile(brand?.logo, "brands");
     filename = await uploadFile(fileUpload, "brands");
   }
 
