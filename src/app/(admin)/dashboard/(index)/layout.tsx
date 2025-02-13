@@ -9,7 +9,7 @@ import Header from "./_components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dashboard | Home",
+  title: "Dashboard",
 };
 
 export default async function RootLayout({
