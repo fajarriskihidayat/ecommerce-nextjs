@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Dashboard | Locations",
 };
 
-const CategoriesPage = async () => {
+const LocationsPage = async () => {
   const data = await getLocations();
 
   return (
@@ -47,4 +47,4 @@ const CategoriesPage = async () => {
   );
 };
 
-export default CategoriesPage;
+export default LocationsPage;
