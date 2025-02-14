@@ -1,0 +1,29 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "../../../globals.css";
+import { getUser } from "@/lib/auth";
+import { redirect } from "next/navigation";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Dashboard | Sign In",
+};
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const { session, user } = await getUser();
+
+  if (session && user.role === "superadmin") {
+    return redirect("/dashboard");
+  }
+
+  return (
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>{children}</body>
+    </html>
+  );
+}
