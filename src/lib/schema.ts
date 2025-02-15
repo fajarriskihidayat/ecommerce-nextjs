@@ -5,11 +5,15 @@ export const ALLOW_MIME_TYPES = ["image/jpg", "image/jpeg", "image/png"];
 export const signInSchema = z.object({
   email: z
     .string()
-    .nonempty("Name is required")
+    .nonempty("Email is required")
     .email({ message: "Email is not valid" }),
   password: z
     .string({ required_error: "Password is required" })
     .min(5, "Password should have min 5 character"),
+});
+
+export const signUpSchema = signInSchema.extend({
+  name: z.string().nonempty("Name is required"),
 });
 
 export const categorySchema = z.object({

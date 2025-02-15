@@ -1,6 +1,6 @@
 "use server";
 
-import { signInSchema } from "@/lib/schema";
+import { signInSchema, signUpSchema } from "@/lib/schema";
 import { ActionResult } from "@/types";
 import prisma from "../../../../../lib/prisma";
 import bcrypt from "bcrypt";
@@ -55,5 +55,43 @@ export const signIn = async (
     sessionCookie.attributes
   );
 
-  return redirect("/dashboard");
+  return redirect("/");
+};
+
+export const signUp = async (
+  _: unknown,
+  formData: FormData
+): Promise<ActionResult> => {
+  const validate = signUpSchema.safeParse({
+    name: formData.get("name"),
+    email: formData.get("email"),
+    password: formData.get("password"),
+  });
+
+  if (!validate.success) {
+    console.log(validate.error.errors);
+    return {
+      error: validate.error.errors[0].message,
+    };
+  }
+
+  const hashPassword = bcrypt.hashSync(validate.data.password, 12);
+
+  try {
+    await prisma.user.create({
+      data: {
+        name: validate.data.name,
+        email: validate.data.email,
+        password: hashPassword,
+        role: "customer",
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    return {
+      error: "Failed to sign in",
+    };
+  }
+
+  return redirect("/sign-in");
 };
