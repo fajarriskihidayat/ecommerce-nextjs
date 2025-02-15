@@ -118,7 +118,7 @@ export async function updateProduct(
   }
 
   try {
-    const data = await prisma.product.update({
+    await prisma.product.update({
       where: { id },
       data: {
         name: validate.data.name,
@@ -131,8 +131,6 @@ export async function updateProduct(
         images: filenames,
       },
     });
-
-    console.log(data);
   } catch (error) {
     console.log(error);
     return {
