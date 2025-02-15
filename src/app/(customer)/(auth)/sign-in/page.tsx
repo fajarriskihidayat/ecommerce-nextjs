@@ -4,9 +4,10 @@ import { ActionResult } from "@/types";
 import { useFormState, useFormStatus } from "react-dom";
 import { signIn } from "../lib/actions";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Eye, EyeOff } from "lucide-react";
 import SubmitButton from "../_components/SubmitButton";
 import Link from "next/link";
+import { useState } from "react";
 
 const initialState: ActionResult = {
   error: "",
@@ -14,6 +15,7 @@ const initialState: ActionResult = {
 
 const SignInPage = () => {
   const [state, formAction] = useFormState(signIn, initialState);
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div
@@ -54,14 +56,18 @@ const SignInPage = () => {
                 <img src="assets/icons/lock.svg" alt="icon" />
               </div>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 className="appearance-none outline-none w-full placeholder:text-[#616369] placeholder:font-normal font-semibold text-black"
                 placeholder="Write your password"
               />
-              <button type="submit" className="reveal-password flex shrink-0">
-                <img src="assets/icons/eye.svg" alt="icon" />
+              <button
+                type="button"
+                className="reveal-password flex shrink-0"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
           </div>
