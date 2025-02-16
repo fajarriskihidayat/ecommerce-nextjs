@@ -69,7 +69,6 @@ export const signUp = async (
   });
 
   if (!validate.success) {
-    console.log(validate.error.errors);
     return {
       error: validate.error.errors[0].message,
     };
