@@ -1,13 +1,8 @@
-import React, { Suspense } from "react";
-import Navbar from "./_components/Navbar";
-import CategoryList from "./_components/CategoryList";
-import ProductList from "./_components/ProductList";
+import { Suspense } from "react";
 import BrandList from "./_components/BrandList";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Belanja",
-};
+import CategoryList from "./_components/CategoryList";
+import Navbar from "./_components/Navbar";
+import ProductList from "./_components/ProductList";
 
 const LandingPage = () => {
   return (

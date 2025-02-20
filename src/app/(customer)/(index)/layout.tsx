@@ -1,10 +1,15 @@
 import { Poppins } from "next/font/google";
 import "../../globalsLanding.css";
+import { Metadata } from "next";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "700", "800"],
   subsets: ["latin-ext"],
 });
+
+export const metadata: Metadata = {
+  title: "Belanja",
+};
 
 export default function LandingRootLayout({
   children,
