@@ -40,8 +40,8 @@ export async function POST(request: Request) {
     if (res.stock && res.stock.length > 0) {
       ORQuery.push({
         stock: {
-          // mencari id didalam array
-          in: res.stock,
+          // sama dengan
+          equals: res.stock,
         },
       });
     }

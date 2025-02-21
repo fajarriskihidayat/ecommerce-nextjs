@@ -5,7 +5,7 @@ export type TFilter = {
   search?: string;
   minPrice?: number;
   maxPrice?: number;
-  stock?: ProductStock[] | null;
+  stock?: ProductStock | null;
   brands?: number[] | null;
   categories?: number[] | null;
   locations?: number[] | null;

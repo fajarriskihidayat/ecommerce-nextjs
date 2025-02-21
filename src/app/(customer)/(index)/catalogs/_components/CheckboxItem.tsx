@@ -1,7 +1,6 @@
 "use client";
 
 import { useFilter } from "@/hooks/useFilter";
-import { ProductStock } from "@prisma/client";
 import { ChangeEvent } from "react";
 
 interface CheckboxItemProps {
@@ -15,18 +14,6 @@ const CheckboxItem = ({ id, value, type }: CheckboxItemProps) => {
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     switch (type) {
-      case "stock":
-        if (e.target.checked) {
-          setFilter({
-            stock: [...(filter?.stock ?? []), e.target.value as ProductStock],
-          });
-        } else {
-          setFilter({
-            stock: filter?.stock?.filter((val) => val !== e.target.value),
-          });
-        }
-        break;
-
       case "brand":
         if (e.target.checked) {
           setFilter({
