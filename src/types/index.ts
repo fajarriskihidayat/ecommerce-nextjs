@@ -2,7 +2,7 @@ export type ActionResult = {
   error: string;
 };
 
-type TParams = {
+export type TParams = {
   id: string;
 };
 
@@ -17,3 +17,5 @@ export type TProduct = {
   category_name: string;
   price: number;
 };
+
+export type TCart = TProduct & { quantity: number };
