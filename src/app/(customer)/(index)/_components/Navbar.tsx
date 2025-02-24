@@ -1,6 +1,6 @@
 import { getUser } from "@/lib/auth";
 import Link from "next/link";
-import React from "react";
+import LogoutButton from "./LogoutButton";
 
 const Navbar = async () => {
   const { session, user } = await getUser();
@@ -25,7 +25,7 @@ const Navbar = async () => {
         </li>
       </ul>
       <div className="flex items-center gap-3">
-        <Link href="/cart">
+        <Link href="/carts">
           <div className="w-12 h-12 flex shrink-0">
             <img src="/assets/icons/cart.svg" alt="icon" />
           </div>
@@ -40,6 +40,7 @@ const Navbar = async () => {
                 alt="photo"
               />
             </div>
+            <LogoutButton />
           </>
         ) : (
           <>
