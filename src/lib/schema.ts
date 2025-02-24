@@ -5,7 +5,18 @@ export const ALLOW_MIME_TYPES = ["image/jpg", "image/jpeg", "image/png"];
 export const signInSchema = z.object({
   email: z
     .string()
-    .nonempty("Name is required")
+    .nonempty("Email is required")
+    .email({ message: "Email is not valid" }),
+  password: z
+    .string({ required_error: "Password is required" })
+    .min(5, "Password should have min 5 character"),
+});
+
+export const signUpSchema = z.object({
+  name: z.string().nonempty("Name is required"),
+  email: z
+    .string()
+    .nonempty("Email is required")
     .email({ message: "Email is not valid" }),
   password: z
     .string({ required_error: "Password is required" })
@@ -58,3 +69,12 @@ export const editProductSchema = productSchema
     id: z.number({ required_error: "Product ID is required" }),
   })
   .omit({ images: true });
+
+export const ShippingAddressSchema = z.object({
+  name: z.string().nonempty("Name is required"),
+  address: z.string().nonempty("Address is required"),
+  city: z.string().nonempty("City is required"),
+  postal_code: z.string().nonempty("Postal Code is required"),
+  phone: z.string().nonempty("Phone Number is required"),
+  notes: z.string().nullable(),
+});
