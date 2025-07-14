@@ -1,6 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { getImageUrl } from "@/lib/supabase";
 import { rupiahFormat } from "@/lib/utils";
 import { StatusOrder } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
