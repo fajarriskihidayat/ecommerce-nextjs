@@ -23,7 +23,7 @@ export async function getOrders() {
         products: item.products?.map((val) => {
           return {
             name: val.product.name,
-            image: getImageUrl(val.product.images[0]),
+            image: getImageUrl(val.product.images[0], "products"),
           };
         }),
         status: item.status,

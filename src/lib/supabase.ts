@@ -10,7 +10,7 @@ export const getImageUrl = (
   path: "brands" | "products" = "brands"
 ) => {
   const { data } = supabase.storage
-    .from("ecommerce")
+    .from("shop")
     .getPublicUrl(`public/${path}/${name}`);
 
   return data.publicUrl;
@@ -24,7 +24,7 @@ export const uploadFile = async (
   const filename = `${path}-${Date.now()}.${fileType}`;
 
   await supabase.storage
-    .from("ecommerce")
+    .from("shop")
     .upload(`public/${path}/${filename}`, file, {
       cacheControl: "3600",
       upsert: false,
@@ -37,7 +37,5 @@ export const deleteFile = async (
   filename: string,
   path: "brands" | "products" = "brands"
 ) => {
-  await supabase.storage
-    .from("ecommerce")
-    .remove([`public/${path}/${filename}`]);
+  await supabase.storage.from("shop").remove([`public/${path}/${filename}`]);
 };
